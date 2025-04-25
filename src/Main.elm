@@ -58,7 +58,7 @@ viewHelp : { a | model : Int } -> Html Msg
 viewHelp { model } =
     let
         _ =
-            Debug.log "Re-rendering!" ()
+            Debug.log "Rendering" model
     in
     div []
         [ button [ onClick Decrement ] [ text "-" ]
