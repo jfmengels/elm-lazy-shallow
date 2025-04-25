@@ -64,5 +64,7 @@ This patches the compiled Elm output, and therefore includes some risks.
 1. This approach could not work in future versions of Elm. Who knows what the future brings (or maybe this function is now provided by the core).
 2. This could potentially not interact well with other tools that are run before (other patch scripts) or afterwards (minifiers).
 3. If you make changes to the files given here, do verify that the patch works in both development AND `--optimize` mode, as the output can be different.
+4. Bad patching can lead to runtime errors.
+5. If you ever choose to patch other things, try to keep the Elm spirit of everything being pure, otherwise you may end up with weird results.
 
 Apply but verify, at your own risk.
