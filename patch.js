@@ -12,12 +12,12 @@ const input = `var $author$project$Html$LazyExtra$lazyShallow = F2(
 const replacement = `
 var $author$project$Html$LazyExtra$lazyShallow = F2(function(func, record)
 {
-  var args = Object.entries(record)
-    .sort(function([key1], [key2]) { return key1 < key2; })
-    .map(function([key, value]) { return value; });
-  return _VirtualDom_thunk([func].concat(args), function() {
-    return func(record);
-  });
+  return _VirtualDom_thunk(
+    [func].concat(Object.values(record)),
+    function() {
+      return func(record);
+    }
+  );
 });`;
 
 
