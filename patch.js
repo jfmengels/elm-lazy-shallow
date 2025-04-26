@@ -12,8 +12,13 @@ const input = `var $author$project$Html$LazyExtra$lazyShallow = F2(
 const replacement = `
 var $author$project$Html$LazyExtra$lazyShallow = F2(function(func, record)
 {
+  var args = [func];
+  for (var key in record)
+  {
+    args.push(record[key]);
+  }
   return _VirtualDom_thunk(
-    [func].concat(Object.values(record)),
+    args,
     function() {
       return func(record);
     }
